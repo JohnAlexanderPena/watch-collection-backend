@@ -1,0 +1,2 @@
+class RolexModelWatch < ApplicationRecord
+end

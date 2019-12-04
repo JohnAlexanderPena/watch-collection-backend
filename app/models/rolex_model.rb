@@ -1,0 +1,2 @@
+class RolexModel < ApplicationRecord
+end

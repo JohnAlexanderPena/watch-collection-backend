@@ -1,0 +1,2 @@
+class BrandWatch < ApplicationRecord
+end
