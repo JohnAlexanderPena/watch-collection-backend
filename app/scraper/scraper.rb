@@ -37,10 +37,17 @@ def scrapeModelNames
           nil
         end
       else
+
         singleWatch = {
-          name: watch.attributes["title"].value,
-          url: watch.attributes["href"].value
+          # if watch.attributes["title"].value == "Oris"
+          #   name: watch.attributes["title"].value.text,
+          #   url: watch.attributes["href"].value
+          # else
+          name: watch.text,
+          url: watch.values[0]
         }
+      # end
+
         @@watch_brands << singleWatch
         # puts singleWatch[:name]
       end
