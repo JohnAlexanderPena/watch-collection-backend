@@ -6,7 +6,8 @@ class RolexModelWatchesController < ApplicationController
   @@rolex_model_watches = []
 
   def get_rolex_details
-    url = "https://www.tourneau.com/rolex/rolex-watches/day-date/"
+    rolex_model = params[:rolex_model].split('').slice(1,params[:rolex_model].split('').length-2).join()
+    url = "https://www.tourneau.com/rolex/rolex-watches/#{rolex_model}/"
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page).css('div.primary-content')
     # watches = parsed_page.css('div.primary-content').css('div.search-result-content').css('li').children.children.children

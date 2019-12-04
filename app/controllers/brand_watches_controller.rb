@@ -7,7 +7,9 @@ class BrandWatchesController < ApplicationController
   @@brand_watches = []
 
   def showWatchModels
-    url = "https://www.tourneau.com/watches/brands/Casio/"
+    # byebug
+    brand = params[:brand].split('').slice(1,params[:brand].split('').length-2).join()
+    url = "https://www.tourneau.com/watches/brands/#{brand}/"
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page)
     watches = parsed_page.css('ul.search-result-items').css('li')
@@ -27,7 +29,6 @@ class BrandWatchesController < ApplicationController
   def index
     showWatchModels
     # @brand_watches = @@brand_watches
-
     render json: @@brand_watches
   end
 
