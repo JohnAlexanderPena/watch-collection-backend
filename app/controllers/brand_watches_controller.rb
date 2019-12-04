@@ -1,6 +1,7 @@
 require "nokogiri"
 require "httparty"
 require "byebug"
+require "scraper"
 
 class BrandWatchesController < ApplicationController
   @@brand_watches = []
@@ -25,9 +26,9 @@ class BrandWatchesController < ApplicationController
 
   def index
     showWatchModels
-    @brand_watches = @@brand_watches
+    # @brand_watches = @@brand_watches
 
-    render json: @brand_watches
+    render json: @@brand_watches
   end
 
 end

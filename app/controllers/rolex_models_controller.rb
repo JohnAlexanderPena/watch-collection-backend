@@ -3,7 +3,7 @@ require "httparty"
 require "byebug"
 
 class RolexModelsController < ApplicationController
-  @@rolexModels = []
+  @@rolex_models = []
 
   def findRolexModels
     url = "https://www.tourneau.com/rolex/"
@@ -19,7 +19,7 @@ class RolexModelsController < ApplicationController
         rolex_url: model.children.css('div.landing-image')[0].children[0].values,
         image_url: model.children.css('div.landing-image')[0].children[0].children[0].values.last
       }
-    @@rolexModels << watch
+    @@rolex_models << watch
       end
     end
   end
@@ -27,8 +27,8 @@ class RolexModelsController < ApplicationController
 
   def index
     findRolexModels
-    @rolex_models = @@rolexModels
-    render json: @rolex_models
+    # @rolex_models = @@rolex_models
+    render json: @@rolex_models
   end
 
 end

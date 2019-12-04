@@ -3,7 +3,7 @@ require "httparty"
 require "byebug"
 
 @watchBrands = []
-@brandWatches = []
+@@brand_watches = []
 @rolexModels = []
 @allRolexWatches = []
 
@@ -45,7 +45,8 @@ def scrapeModelNames
   end
 
   def showWatchModels
-    url = "https://www.tourneau.com/watches/brands/Citizen/"
+     params = "Casio"
+    url = 'https://www.tourneau.com/watches/brands/casio/'
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page)
     watches = parsed_page.css('ul.search-result-items').css('li')
@@ -57,7 +58,7 @@ def scrapeModelNames
              model: watch.children.css('div.product-tile').css('div.product-image').children.children[1].values[1],
              image_url: watch.children.css('div.product-tile').css('div.product-image').children.children[1].values[0]
            }
-           @brandWatches << watch
+           @@brand_watches << watch
       end
     end
   end
@@ -108,7 +109,7 @@ showWatchModels
 findRolexModels
 
 # puts "Brand WAtches"
-# puts @brandWatches
+# puts @@brand_watches
 # puts "Watch Brands"
 # puts @watchBrands
 # puts @allRolexWatches

@@ -3,7 +3,7 @@ require "httparty"
 require "byebug"
 
 class WatchBrandsController < ApplicationController
-  @@watchBrands = []
+  @@watch_brands = []
   def scrapeModelNames
     url = "https://www.tourneau.com/watches/brands/#all"
     unparsed_page = HTTParty.get(url)
@@ -26,7 +26,7 @@ class WatchBrandsController < ApplicationController
               name: watch.attributes["title"].value,
               url: watch.attributes["href"].value
             }
-            @@watchBrands << singleWatch
+            @@watch_brands << singleWatch
           else
             nil
           end
@@ -35,7 +35,7 @@ class WatchBrandsController < ApplicationController
             name: watch.attributes["title"].value,
             url: watch.attributes["href"].value
           }
-          @@watchBrands << singleWatch
+          @@watch_brands << singleWatch
           # puts singleWatch[:name]
         end
       end
@@ -43,8 +43,8 @@ class WatchBrandsController < ApplicationController
 
   def index
     scrapeModelNames
-    @watch_brands = @@watchBrands
-    render json: @watch_brands
+    # @watch_brands = @@watch_brands
+    render json: @@watch_brands
   end
 
 end
