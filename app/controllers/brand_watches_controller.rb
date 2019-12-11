@@ -12,4 +12,13 @@ class BrandWatchesController < ApplicationController
     render json: @@brand_watches
   end
 
+  def create
+
+
+    showWatchModels
+
+    render json: @@brand_watches
+  end
+
+
 end

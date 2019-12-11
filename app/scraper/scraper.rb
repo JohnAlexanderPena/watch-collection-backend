@@ -118,15 +118,3 @@ def scrapeModelNames
       end
       # puts allWatches
   end
-
-
-# get_rolex_details
-# scrapeModelNames
-# showWatchModels
-# findRolexModels
-
-# puts "Brand WAtches"
-# puts @@brand_watches
-# puts "Watch Brands"
-# puts @watchBrands
-# puts @@all_rolex_watches
