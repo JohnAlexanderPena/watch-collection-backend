@@ -77,6 +77,7 @@ def scrapeModelNames
   end
 
   def findRolexModels
+    @@rolex_models =[]
     url = "https://www.tourneau.com/rolex/"
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page)
