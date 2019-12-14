@@ -112,7 +112,7 @@ def scrapeModelNames
       watch = {
         watch_url: watch.children[7].css('div.product-name').children.children[3].attributes["href"].value,
         description: watch.children[7].css('div.product-name').children.children[5].text,
-        name: watch.children[7].css('div.product-image').children[2].children[1].attributes["title"].value,
+        rolex_model: watch.children[7].css('div.product-image').children[2].children[1].attributes["title"].value,
         image_url: watch.children[7].css('div.product-image').children[2].children[1].attributes["src"].value
       }
       @@all_rolex_watches << watch

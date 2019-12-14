@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_054434) do
+ActiveRecord::Schema.define(version: 2019_12_14_005422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_054434) do
   create_table "rolex_model_watches", force: :cascade do |t|
     t.string "watch_url"
     t.string "description"
-    t.string "name"
+    t.string "rolex_model"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
