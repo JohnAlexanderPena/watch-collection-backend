@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem 'sqlite3', group: :development
+
 
 gem 'httparty'
 gem 'nokogiri'
@@ -34,6 +36,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
